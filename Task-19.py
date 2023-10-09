@@ -1,7 +1,7 @@
 '''Visit the URL htttps://www.aucedemo.co,/ and login with the following credentials:-
 
     Username: standard_user
-    password: standard_user ----- As this password is not valid secret_sauce is taken as password
+    password: standard_user ----- (As this password is not valid "secret_sauce" is taken as password)
 
 Try to fetch the following using Python selenium:-
     1) Title of the Webpage
