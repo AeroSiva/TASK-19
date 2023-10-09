@@ -37,7 +37,7 @@ class Basic_webpage_func:
         self.driver.quit()
 
 
-class Saucedemo(Basic_webpage_func):
+class SauceDemo(Basic_webpage_func):
 
     def __init__(self,username,password, web_url):
         super().__init__(web_url)
@@ -86,16 +86,16 @@ class Saucedemo(Basic_webpage_func):
            print(f"Extracting and saving entire content Failed : {selenium_error}")
 
 
-sauce = Saucedemo(web_url = "https://www.saucedemo.com/", username= "standard_user", password= "secret_sauce")
+# Executing all the requirements of the question (i.e open,login,fetch Title,URl,Extract content)
+try:
+    sauce = SauceDemo(username="standard_user", password="secret_sauce", web_url="https://www.saucedemo.com/")
 
-sauce.open_url()
+    sauce.open_url()
+    sauce.login()
 
-sauce.login()
+    print(f"Title of Web-page is: {sauce.fetch_title()}")
+    print(f"URL of Web-page is: {sauce.current_url()}")
 
-print(f"Title of Web-page is: {sauce.fetch_title()}")
-
-print(f"URL of Web-page is: {sauce.current_url()}")
-
-sauce.extract_content()
-
-sauce.shutdown()
+    sauce.extract_content()
+finally:
+    sauce.shutdown()
